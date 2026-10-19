@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dh6yqfo3btbpp"]
+
+[ext_resource type="Texture2D" uid="uid://x7uay5d2xfca" path="res://Assets/img/background/dark_forest_1.png" id="1_4dk3a"]
+[ext_resource type="Texture2D" uid="uid://cwobbrskic1gh" path="res://Assets/img/background/dark_forest_2.png" id="2_n8nko"]
+[ext_resource type="Texture2D" uid="uid://dhqglpmoqwwcv" path="res://Assets/img/background/dark_forest_3.png" id="3_86bnu"]
+[ext_resource type="Texture2D" uid="uid://2mwjclcrqjmj" path="res://Assets/img/background/dark_forest_4.png" id="4_mnkvw"]
+[ext_resource type="Texture2D" uid="uid://1am3o7cn0njc" path="res://Assets/img/background/dark_forest_5.png" id="5_1r653"]
+
+[node name="Bg" type="ParallaxBackground" unique_id=1448182169]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1445640714]
+scale = Vector2(2.25, 1.8)
+texture = ExtResource("1_4dk3a")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=568360282]
+motion_scale = Vector2(0.6, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=1757535070]
+scale = Vector2(2.25, 1.8)
+texture = ExtResource("2_n8nko")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="." unique_id=1651201394]
+motion_scale = Vector2(0.7, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2" unique_id=1564428359]
+scale = Vector2(2.25, 1.8)
+texture = ExtResource("3_86bnu")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="." unique_id=1149637505]
+motion_scale = Vector2(0.8, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3" unique_id=1710463910]
+scale = Vector2(2.25, 1.8)
+texture = ExtResource("4_mnkvw")
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="." unique_id=1809256178]
+motion_scale = Vector2(0.9, 1)
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4" unique_id=543732468]
+scale = Vector2(2.25, 1.8)
+texture = ExtResource("5_1r653")
+centered = false

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dwy67emp0pb5j"]
+
+[ext_resource type="PackedScene" uid="uid://dh6yqfo3btbpp" path="res://Scene/bg.tscn" id="1_4jv7b"]
+[ext_resource type="PackedScene" uid="uid://dqoa0f0eagqtu" path="res://Scene/ground.tscn" id="2_03iqk"]
+[ext_resource type="PackedScene" uid="uid://cap10v383oyjb" path="res://Scene/dino.tscn" id="3_ihreq"]
+
+[node name="Main" type="Node2D" unique_id=1228967069]
+
+[node name="Bg" parent="." unique_id=1448182169 instance=ExtResource("1_4jv7b")]
+
+[node name="Ground" parent="." unique_id=1615771159 instance=ExtResource("2_03iqk")]
+
+[node name="Dino" parent="." unique_id=1837579830 instance=ExtResource("3_ihreq")]
+position = Vector2(141, 485)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1622939283]
+position = Vector2(576, 324)

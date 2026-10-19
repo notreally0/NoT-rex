@@ -1,0 +1,22 @@
+extends CharacterBody2D
+
+const GRAVITY = 4200.0
+const JUMP_SPEED = -1800.0
+@onready var jump: AudioStreamPlayer = $Jump
+
+
+func _physics_process(delta):
+	velocity.y += GRAVITY * delta
+	if is_on_floor():
+		if Input.is_action_pressed("ui_accept"):
+			velocity.y = JUMP_SPEED
+			jump.play()
+		if Input.is_physical_key_pressed(KEY_S):
+			$AnimatedSprite2D.play("duck")
+		else :
+			$AnimatedSprite2D.play("run")
+	else:
+		$AnimatedSprite2D.play("jump")
+			
+	move_and_slide()
+	
