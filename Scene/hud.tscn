@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dwxp2dkbrurdk"]
+
+[ext_resource type="FontFile" uid="uid://cp8g1l5ahb5cf" path="res://Assets/fonts/retro.ttf" id="1_cevek"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3quw2"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_d1bkm"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_fmoiy"]
+font_size = 24
+
+[node name="HUD" type="CanvasLayer" unique_id=98116413]
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=31292895]
+offset_right = 112.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("1_cevek")
+text = "SCORE:"
+label_settings = SubResource("LabelSettings_3quw2")
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="." unique_id=159413204]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -172.0
+offset_bottom = 31.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("1_cevek")
+text = "HIGHSCORE:"
+label_settings = SubResource("LabelSettings_d1bkm")
+horizontal_alignment = 1
+
+[node name="StartLabel" type="Label" parent="." unique_id=1514532319]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.5
+offset_top = -11.5
+offset_right = 83.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_cevek")
+text = "PRESS START TO PLAY"
+label_settings = SubResource("LabelSettings_fmoiy")
+horizontal_alignment = 1
