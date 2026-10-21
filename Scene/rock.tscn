@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bkfpb636tcthx"]
+
+[ext_resource type="Texture2D" uid="uid://datje30fni2k2" path="res://Assets/img/obstacles/rock.png" id="1_whpmr"]
+
+[node name="rock" type="Area2D" unique_id=1072057815]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089911466]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1365564546]
+scale = Vector2(3, 3)
+texture = ExtResource("1_whpmr")
