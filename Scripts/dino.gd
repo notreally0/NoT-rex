@@ -8,7 +8,10 @@ const JUMP_SPEED = -1800.0
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
-		$RunCollision.disabled = false
+		if not get_parent().game_running:
+			$AnimatedSprite2D.play("idle")
+		else:
+			$RunCollision.disabled = false
 		if Input.is_action_pressed("ui_accept"):
 			velocity.y = JUMP_SPEED
 			jump.play()
