@@ -3,9 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://datje30fni2k2" path="res://Assets/img/obstacles/rock.png" id="1_whpmr"]
 
 [node name="rock" type="Area2D" unique_id=1072057815]
+modulate = Color(0.5370987, 0.5370987, 0.5370987, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2089911466]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=334111679]
+scale = Vector2(3, 3)
+polygon = PackedVector2Array(-21.5, -15, -25.2, -12, -26.9, -12, -28.5, -7.2, -28.5, 15, 28.5, 15, 28.5, 7.299999, 22.2, 2, 18.400002, 2, 10.5, -7.7, 10.5, -9.2, 7, -11, 2.2999992, -11, -1.5, -14.8)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1365564546]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1820878844]
+modulate = Color(0.654902, 0.654902, 0.654902, 1)
 scale = Vector2(3, 3)
 texture = ExtResource("1_whpmr")

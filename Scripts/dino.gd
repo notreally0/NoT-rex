@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const GRAVITY = 4200.0
+const GRAVITY = 5400.0
 const JUMP_SPEED = -1800.0
 @onready var jump: AudioStreamPlayer = $Jump
 
