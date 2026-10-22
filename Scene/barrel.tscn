@@ -9,8 +9,10 @@ size = Vector2(80, 80)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1234621834]
 modulate = Color(0.5370987, 0.5370987, 0.5370987, 1)
+position = Vector2(0, 24)
 scale = Vector2(3, 3)
 texture = ExtResource("1_wqe8y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=957217472]
+position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_d1bkm")

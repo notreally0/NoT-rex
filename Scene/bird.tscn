@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cl6cqfahw3w4r"]
 
 [ext_resource type="Texture2D" uid="uid://3f4tldehnd2e" path="res://Assets/img/obstacles/Bird.png" id="1_easqi"]
+[ext_resource type="Script" uid="uid://7un7xh36g3ws" path="res://Scripts/bird.gd" id="1_emhuj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emhuj"]
 atlas = ExtResource("1_easqi")
@@ -46,6 +47,7 @@ height = 64.0
 size = Vector2(40, 48)
 
 [node name="bird" type="Area2D" unique_id=1569412849]
+script = ExtResource("1_emhuj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1349885541]
 scale = Vector2(3.325, 3.325)

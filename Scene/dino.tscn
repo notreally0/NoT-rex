@@ -164,6 +164,7 @@ scale = Vector2(8, 8)
 script = ExtResource("1_bjxop")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1286699720]
+modulate = Color(0.56046253, 0.56046253, 0.56046253, 1)
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_d1bkm")
 animation = &"duck"

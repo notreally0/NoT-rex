@@ -19,7 +19,7 @@ var last_obs
 const DINO_START_POS := Vector2(150,485)
 const CAM_START_POS := Vector2(576, 324)
 const START_SPEED :int = 600
-const MAX_SPEED :int = 1500
+const MAX_SPEED :int = 2000
 const SCORE_MODIFIER :int = 10
 const SPEED_MODIFIER :int = 5000
 
@@ -73,6 +73,11 @@ func generate_orb():
 			var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2 + 5)
 			last_obs = obs
 			add_obs(obs, obs_x, obs_y)
+			if (randi() % 2) == 0:
+				obs = bird_scene.instantiate()
+				var bird_x : int = screen_size.x + score + 100
+				var bird_y : int = bird_height[randi() % bird_height.size()]
+				add_obs(obs, obs_x, obs_y)
 		
 func add_obs(obs, x, y):
 	obs.position = Vector2(x, y)

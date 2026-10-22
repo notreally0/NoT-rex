@@ -13,7 +13,8 @@ script = ExtResource("1_03iqk")
 [node name="Bg" parent="." unique_id=1448182169 instance=ExtResource("1_4jv7b")]
 
 [node name="Ground" parent="." unique_id=1615771159 instance=ExtResource("2_03iqk")]
-position = Vector2(-1, 0)
+z_index = 1
+position = Vector2(-2, -2)
 
 [node name="Dino" parent="." unique_id=1837579830 instance=ExtResource("3_ihreq")]
 position = Vector2(141, 485)
