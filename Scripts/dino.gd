@@ -4,12 +4,13 @@ const GRAVITY = 5400.0
 const JUMP_SPEED = -1800.0
 @onready var jump: AudioStreamPlayer = $Jump
 
-
 func _physics_process(delta):
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
 		if not get_parent().game_running:
 			$AnimatedSprite2D.play("idle")
+			move_and_slide()
+			return
 		else:
 			$RunCollision.disabled = false
 		if Input.is_action_pressed("ui_accept"):

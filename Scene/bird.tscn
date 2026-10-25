@@ -1,22 +1,29 @@
 [gd_scene format=3 uid="uid://cl6cqfahw3w4r"]
 
-[ext_resource type="Texture2D" uid="uid://3f4tldehnd2e" path="res://Assets/img/obstacles/Bird.png" id="1_easqi"]
-[ext_resource type="Script" uid="uid://7un7xh36g3ws" path="res://Scripts/bird.gd" id="1_emhuj"]
+[sub_resource type="GDScript" id="GDScript_easqi"]
+script/source = "extends Area2D
+
+func _process(delta):
+	position.x -= get_parent().speed / 2
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q2b08"]
+load_path = "res://.godot/imported/Bird.png-b967d1681cb47557b839dad4d70b3e5b.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_emhuj"]
-atlas = ExtResource("1_easqi")
+atlas = SubResource("CompressedTexture2D_q2b08")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6lo0"]
-atlas = ExtResource("1_easqi")
+atlas = SubResource("CompressedTexture2D_q2b08")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_524eg"]
-atlas = ExtResource("1_easqi")
+atlas = SubResource("CompressedTexture2D_q2b08")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2aaf0"]
-atlas = ExtResource("1_easqi")
+atlas = SubResource("CompressedTexture2D_q2b08")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d1bkm"]
@@ -47,7 +54,7 @@ height = 64.0
 size = Vector2(40, 48)
 
 [node name="bird" type="Area2D" unique_id=1569412849]
-script = ExtResource("1_emhuj")
+script = SubResource("GDScript_easqi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1349885541]
 scale = Vector2(3.325, 3.325)

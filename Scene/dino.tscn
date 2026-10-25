@@ -4,34 +4,6 @@
 [ext_resource type="Script" uid="uid://cq51rw5mjyq5r" path="res://Scripts/dino.gd" id="1_bjxop"]
 [ext_resource type="AudioStream" uid="uid://b8e5rny1vamgk" path="res://Assets/sound/jump.wav" id="2_bjxop"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_po2qs"]
-atlas = ExtResource("1_8yr0m")
-region = Rect2(408, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gto4m"]
-atlas = ExtResource("1_8yr0m")
-region = Rect2(432, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4v2y5"]
-atlas = ExtResource("1_8yr0m")
-region = Rect2(456, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_37cau"]
-atlas = ExtResource("1_8yr0m")
-region = Rect2(480, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vjebn"]
-atlas = ExtResource("1_8yr0m")
-region = Rect2(504, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8xli4"]
-atlas = ExtResource("1_8yr0m")
-region = Rect2(528, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_urpwr"]
-atlas = ExtResource("1_8yr0m")
-region = Rect2(552, 0, 24, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_186g2"]
 atlas = ExtResource("1_8yr0m")
 region = Rect2(0, 0, 24, 24)
@@ -78,32 +50,6 @@ region = Rect2(216, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d1bkm"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_po2qs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gto4m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4v2y5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_37cau")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vjebn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8xli4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_urpwr")
-}],
-"loop": 1,
-"name": &"duck",
-"speed": 10.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_186g2")
@@ -156,9 +102,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j3vn7"]
 size = Vector2(10.125, 17)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8s1y"]
-size = Vector2(11, 14)
-
 [node name="Dino" type="CharacterBody2D" unique_id=1837579830]
 scale = Vector2(8, 8)
 script = ExtResource("1_bjxop")
@@ -167,20 +110,13 @@ script = ExtResource("1_bjxop")
 modulate = Color(0.56046253, 0.56046253, 0.56046253, 1)
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_d1bkm")
-animation = &"duck"
+animation = &"idle"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.02602699
 
 [node name="RunCollision" type="CollisionShape2D" parent="." unique_id=479404744]
 visible = false
 position = Vector2(-0.9375, 0.5)
 shape = SubResource("RectangleShape2D_j3vn7")
-
-[node name="DuckCollision" type="CollisionShape2D" parent="." unique_id=2127268498]
-visible = false
-position = Vector2(-0.5, 1)
-shape = SubResource("RectangleShape2D_u8s1y")
 
 [node name="Jump" type="AudioStreamPlayer" parent="." unique_id=1369875959]
 stream = ExtResource("2_bjxop")

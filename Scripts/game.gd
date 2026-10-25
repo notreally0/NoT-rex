@@ -3,10 +3,8 @@ extends Node2D
 var stump_scene = preload("res://Scene/stump.tscn")
 var rock_scene = preload("res://Scene/rock.tscn")
 var barrel_scene = preload("res://Scene/barrel.tscn")
-var bird_scene = preload("res://Scene/bird.tscn")
 var obstacle_types := [stump_scene, rock_scene, barrel_scene]
 var obstacles : Array
-var bird_height := [200, 390]
 
 
 var score : float
@@ -15,6 +13,7 @@ var screen_size : Vector2
 var ground_height : int
 var game_running : bool
 var last_obs
+var high_score : int
 
 const DINO_START_POS := Vector2(150,485)
 const CAM_START_POS := Vector2(576, 324)
@@ -28,20 +27,22 @@ func _ready():
 	$"8Bit".play()
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
+	$GameOver.get_node("Button").pressed.connect(new_game)
 	new_game()
-	
 	
 func new_game():
 	score = 0
 	show_score()
 	speed = START_SPEED
 	game_running = false
+	get_tree().paused = false
 	$Dino.position = DINO_START_POS
 	$Dino.velocity = Vector2(0, 0)
 	$Camera2D.position =CAM_START_POS
 	$Ground.position = Vector2(0, 0)
 	$HUD.get_node("StartLabel").show()
-	
+	$GameOver.hide()
+	$"8Bit".play()
 func _process(delta):
 	if game_running:
 		speed = START_SPEED + score / SPEED_MODIFIER
@@ -73,16 +74,31 @@ func generate_orb():
 			var obs_y : int = screen_size.y - ground_height - (obs_height * obs_scale.y / 2 + 5)
 			last_obs = obs
 			add_obs(obs, obs_x, obs_y)
-			if (randi() % 2) == 0:
-				obs = bird_scene.instantiate()
-				var bird_x : int = screen_size.x + score + 100
-				var bird_y : int = bird_height[randi() % bird_height.size()]
-				add_obs(obs, obs_x, obs_y)
-		
 func add_obs(obs, x, y):
 	obs.position = Vector2(x, y)
+	obs.body_entered.connect(hit_obs)
 	add_child(obs)
 	obstacles.append(obs)
 	
+func remove_obs(obs):
+	obs.queue_free()
+	obstacles.erase(obs)
+	
+func hit_obs(body):
+	if body.name == "Dino":
+		game_over()
+	
 func show_score():
 	$HUD.get_node("ScoreLabel").text = "SCORE:" + str(int(score / SCORE_MODIFIER))
+
+func check_high_score():
+	if score > high_score:
+		high_score = score
+		$HUD.get_node("HighScoreLabel").text = "HIGHSCORE:" + str(int(score / SCORE_MODIFIER))
+func game_over():
+	check_high_score()
+	get_tree().paused = true
+	game_running = false
+	$GameOver.show()
+	$Hit.play()
+	

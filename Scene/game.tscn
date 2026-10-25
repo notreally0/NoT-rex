@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cap10v383oyjb" path="res://Scene/dino.tscn" id="3_ihreq"]
 [ext_resource type="PackedScene" uid="uid://dwxp2dkbrurdk" path="res://Scene/hud.tscn" id="5_ihreq"]
 [ext_resource type="AudioStream" uid="uid://lxim1xqp1iy7" path="res://Assets/sound/8-Bit .mp3" id="6_thj8p"]
+[ext_resource type="PackedScene" uid="uid://d28cd61bbgm4k" path="res://Scene/game_over.tscn" id="7_h8jt7"]
+[ext_resource type="AudioStream" uid="uid://dsk3etyee57be" path="res://Assets/sound/Hit.mp3" id="8_sagxc"]
 
 [node name="Main" type="Node2D" unique_id=1228967069]
 script = ExtResource("1_03iqk")
@@ -30,3 +32,9 @@ volume_db = -30.0
 pitch_scale = 0.9
 autoplay = true
 mix_target = 1
+
+[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=834010917]
+stream = ExtResource("8_sagxc")
+
+[node name="GameOver" parent="." unique_id=1090455207 instance=ExtResource("7_h8jt7")]
+process_mode = 2
